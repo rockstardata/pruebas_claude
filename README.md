@@ -1,43 +1,39 @@
-# 🚀 RockstarData — Visor de Prototipos de Fraude
+# 🚀 RockstarData — Visor de Prototipos
 
-## Ejecución rápida (2 comandos)
+## Ejecución rápida
 
 ```bash
 npm install
 npm run dev
 ```
 
-Abre **http://localhost:3333** en tu navegador.
+Abre **http://localhost:3333**
 
-## Qué contiene
+## Componentes incluidos (11 total)
 
-Proyecto Next.js standalone con **7 prototipos interactivos**:
+### Detección de Fraude (5)
 
-| Tab | Componente | Descripción |
-|-----|-----------|-------------|
-| 🛡️ Fraud Radar | `FraudRadarChart` | Radar de riesgo por local con 6 dimensiones |
-| 👻 Ghost Employees | `GhostEmployeeDetection` | Detección de empleados fantasma (nómina vs fichaje vs POS) |
-| 💊 Health Score Grid | `HealthScoreGrid` | Grid de salud por local × día × turno |
-| 📦 Inventory Deviations | `InventoryDeviations` | Desviaciones de inventario con drill-down por categoría |
-| 👤 Manager Correlation | `ManagerCorrelationTimeline` | Timeline de correlación gerente-anomalías |
-| 🔥 Performance Heatmap | `PerformanceHeatmap` | Heatmap de rendimiento por local/día/métrica |
-| ↩️ Void Bubble Chart | `VoidBubbleChart` | Bubble chart de anulaciones por operador |
+| Componente | Archivo original | Descripción |
+|-----------|-----------------|-------------|
+| 🛡️ Fraud Radar | `fraud-radar-chart.jsx` | Radar 6 dimensiones por local con comparación |
+| 👻 Empleados Fantasma | `ghost-employee-detection.jsx` | Cruce nómina × fichaje × POS |
+| ↩️ Anulaciones Bubble | `void-bubble-chart.jsx` | Bubble chart anulaciones por operador |
+| 👤 Correlación Gerente | `manager-correlation-timeline.jsx` | Timeline 30 días gerente-anomalías |
+| 📦 Desviaciones Inventario | `inventory-deviations.jsx` | Barras con drill-down por categoría |
 
-## Documentación incluida
+### Salud Operacional (6)
 
-- `fraud-radar-business-logic.md` — Lógica de negocio completa del radar
-- `analisis-salud-operacional.md` — Auditoría UX del panel
-- `catalogo-fraude-hosteleria.md` — Catálogo de patrones de fraude
+| Componente | Archivo original | Descripción |
+|-----------|-----------------|-------------|
+| 💰 KPIs Caja | `kpi-cards-caja.jsx` | Cards resumen ejecutivo Caja y Ventas |
+| 💊 Health Score Grid | `health-score-grid.jsx` | Grid local × día × turno con indicadores |
+| 🔥 Health Heatmap Caja | `health-score-heatmap.jsx` | Heatmap salud caja y ventas |
+| 🛒 Health Heatmap Compras | `compras-health-heatmap.jsx` | Heatmap salud compras |
+| 📊 Performance Heatmap | `performance-heatmap.jsx` | Heatmap rendimiento multi-métrica |
+| 👥 Anomalías Personal | `personnel-anomaly-grid.jsx` | Grid anomalías HR por turno |
 
 ## Stack
 
-- Next.js 14 (Pages Router)
-- React 18
-- Recharts (para gráficos radar, barras, líneas)
-- Sin Tailwind — todos los estilos son inline (prototipos autocontenidos)
-
-## Notas
-
-- Los componentes usan `dynamic import` con `ssr: false` para evitar problemas con recharts en servidor.
-- Todos los datos son mock/demo hardcodeados en cada componente.
-- Este proyecto es **solo para visualización** de prototipos, no depende del proyecto principal.
+- Next.js 14 · React 18 · Recharts
+- Estilos inline (prototipos autocontenidos)
+- Todos los datos son mock

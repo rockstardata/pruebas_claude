@@ -10,7 +10,6 @@ body {
   color: #e2e8f0;
 }
 
-/* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
